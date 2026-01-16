@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Page Not Found - The Fifth Verse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-code {
+            font-size: clamp(80px, 15vw, 150px);
+            font-weight: bold;
+            color: var(--black);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .error-content {
+            background-color: var(--white);
+            padding: 60px 20px;
+        }
+        
+        .error-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .error-link {
+            background-color: var(--beige);
+            color: var(--black);
+            padding: 15px 30px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            font-size: 16px;
+        }
+        
+        .error-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="index.html" class="logo">THE FIFTH VERSE</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="error-code">404</div>
+            <h1 style="font-size: clamp(28px, 5vw, 42px);">Page Not Found</h1>
+            <p>The page you're looking for doesn't exist or has been moved.</p>
+        </div>
+    </section>
+
+    <section class="error-content">
+        <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 20px; font-weight: normal;">What can you do?</h2>
+            <p style="margin-bottom: 30px;">Try one of these instead:</p>
+            
+            <div class="error-links">
+                <a href="index.html" class="error-link">Go Home</a>
+                <a href="services.html" class="error-link">Our Services</a>
+                <a href="about.html" class="error-link">About Us</a>
+                <a href="contact.html" class="error-link">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fifthverse Technologies Private Limited. All rights reserved.</p>
+            <p>Bangalore, India</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
