@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>The Fifth Verse - Building Tomorrow's Brands</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="index.html" class="logo">THE FIFTH VERSE</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Building Tomorrow's Brands</h1>
+            <p>We help visionary entrepreneurs build exceptional D2C companies, find culture-fit leadership, and create premium digital experiences.</p>
+            <button class="cta-btn" onclick="openContactPopup()">Get Started</button>
+        </div>
+    </section>
+
+    <section class="services-preview">
+        <div class="container">
+            <h2>What We Do</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>D2C Company Building</h3>
+                    <p>End-to-end D2C company development with strategic brand positioning</p>
+                </div>
+                <div class="service-card">
+                    <h3>Leadership Hiring</h3>
+                    <p>Psychographically matched, culture-fit hiring for leadership roles</p>
+                </div>
+                <div class="service-card">
+                    <h3>Website & App Development</h3>
+                    <p>Custom websites, Wix & Shopify solutions, iOS and Android apps</p>
+                </div>
+                <div class="service-card">
+                    <h3>Image & Video Generation</h3>
+                    <p>Professional image and video generation for brand usage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Popup -->
+    <div id="contactPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeContactPopup()">&times;</span>
+            
+            <div id="contactForm">
+                <h2>Let's Build Together</h2>
+                <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+                
+                <form class="contact-form" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <div class="phone-input-group">
+                            <select id="countryCode" name="countryCode" class="country-code-select" required>
+                                <option value="+91">🇮🇳 India (+91)</option>
+                            </select>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="requirements">Tell Us About Your Requirements *</label>
+                        <textarea id="requirements" name="requirements" rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Submit</button>
+                    
+                    <p class="form-note">We respect your privacy. Your information will only be used to respond to your inquiry.</p>
+                </form>
+            </div>
+            
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h3>Thank You!</h3>
+                <p>We've received your message and will get back to you within 24 hours.</p>
+                <button class="cta-btn" onclick="closeContactPopup()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Fifthverse Technologies Private Limited. All rights reserved.</p>
+            <p>Bangalore, India</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
