@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Shadows+Into+Light&display=swap');
+/* Put your custom font files in /assets/fonts/ */
+@font-face {
+    font-family: "SiteCustom";
+    src: url("../assets/fonts/site-font.woff2") format("woff2"),
+        url("../assets/fonts/site-font.woff") format("woff");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
 
 * {
     margin: 0;
@@ -11,6 +19,7 @@
     --black: #1A1A1A;
     --white: #FFFFFF;
     --light-beige: #F5F0E8;
+    --coming-font: "SiteCustom", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -30,6 +39,7 @@ body.coming-soon-page {
     justify-content: center;
     overflow: hidden;
     color: #2f3035;
+    font-family: var(--coming-font);
     background:
         radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.68), transparent 46%),
         radial-gradient(circle at 82% 85%, rgba(255, 255, 255, 0.52), transparent 48%),
@@ -53,41 +63,84 @@ body.coming-soon-page::before {
     animation: reveal-home 0.75s ease-out both;
 }
 
-.brand-title {
-    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: clamp(46px, 10vw, 110px);
-    font-weight: 900;
-    letter-spacing: 0.03em;
-    line-height: 0.98;
-    color: #2e2f34;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-.brand-mark {
-    font-size: clamp(12px, 1.6vw, 17px);
-    margin-left: 8px;
-    font-weight: 400;
-    vertical-align: 18%;
+.brand-logo {
+    width: clamp(180px, 26vw, 320px);
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    filter: contrast(1.05);
 }
 
 .brand-subtitle {
-    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: clamp(26px, 3.2vw, 44px);
     letter-spacing: 0.15em;
-    margin-top: 16px;
-    margin-bottom: 42px;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    font-weight: 400;
 }
 
 .handwritten-note {
-    font-family: "Shadows Into Light", "Courier New", monospace;
-    font-size: clamp(28px, 3.2vw, 50px);
-    letter-spacing: 0.1em;
+    font-size: clamp(18px, 1.7vw, 24px);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
     line-height: 1.15;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: rgba(48, 49, 53, 0.84);
 }
 
+.pellet-nav {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pellet-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    height: 38px;
+    padding: 0 18px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(46, 47, 52, 0.62);
+    background: rgba(255, 255, 255, 0.45);
+    color: #2e2f34;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.pellet-btn:hover {
+    background: rgba(255, 255, 255, 0.82);
+    transform: translateY(-1px);
+}
+
+.contact-heading {
+    margin-top: 34px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.76;
+}
+
 .notify-form {
-    margin-top: 44px;
+    margin-top: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,9 +148,9 @@ body.coming-soon-page::before {
 }
 
 .notify-label {
-    font-family: "Shadows Into Light", "Courier New", monospace;
-    font-size: clamp(24px, 2.6vw, 40px);
-    letter-spacing: 0.08em;
+    font-size: clamp(14px, 1.2vw, 16px);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: rgba(45, 46, 51, 0.92);
 }
 
@@ -117,7 +170,7 @@ body.coming-soon-page::before {
     padding: 12px 14px;
     font-size: clamp(16px, 1.5vw, 20px);
     color: #28292e;
-    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--coming-font);
 }
 
 .notify-input-wrap input:focus {
@@ -141,7 +194,7 @@ body.coming-soon-page::before {
 .notify-status {
     margin-top: 14px;
     min-height: 24px;
-    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: var(--coming-font);
     font-size: 14px;
     letter-spacing: 0.04em;
     color: #3a3b40;
@@ -761,21 +814,39 @@ body.coming-soon-page::before {
     }
 
     .brand-subtitle {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
     }
 
     .handwritten-note {
-        font-size: clamp(22px, 7vw, 40px);
+        font-size: clamp(15px, 4vw, 19px);
+        letter-spacing: 0.18em;
+    }
+
+    .pellet-nav {
+        margin-top: 22px;
+        gap: 8px;
+    }
+
+    .pellet-btn {
+        min-width: 108px;
+        height: 34px;
+        padding: 0 14px;
+        font-size: 11px;
+    }
+
+    .contact-heading {
+        margin-top: 24px;
     }
 
     .notify-form {
-        margin-top: 34px;
+        margin-top: 12px;
         flex-direction: column;
         gap: 10px;
     }
 
     .notify-label {
-        font-size: clamp(22px, 8vw, 36px);
+        font-size: 12px;
+        letter-spacing: 0.16em;
     }
 
     .notify-input-wrap {
@@ -903,12 +974,29 @@ body.coming-soon-page::before {
 }
 
 @media (max-width: 480px) {
+    .coming-soon-shell {
+        width: min(94vw, 420px);
+    }
+
+    .brand-logo {
+        width: clamp(140px, 42vw, 220px);
+    }
+
     .brand-subtitle {
+        font-size: clamp(20px, 7vw, 30px);
         letter-spacing: 0.1em;
     }
 
     .handwritten-note {
-        letter-spacing: 0.06em;
+        letter-spacing: 0.12em;
+    }
+
+    .contact-heading {
+        font-size: 11px;
+    }
+
+    .notify-input-wrap {
+        width: 100%;
     }
 
     .container {
