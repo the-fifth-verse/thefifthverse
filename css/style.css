@@ -17,11 +17,12 @@
     --black: #1A1A1A;
     --white: #FFFFFF;
     --light-beige: #F5F0E8;
+    --body-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
     --coming-font: "Shadows Into Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
-    font-family: var(--coming-font);
+    font-family: var(--body-font);
     background-color: var(--light-beige);
     color: var(--black);
     line-height: 1.6;
@@ -37,7 +38,7 @@ body.coming-soon-page {
     justify-content: center;
     overflow: hidden;
     color: #2f3035;
-    font-family: var(--coming-font);
+    font-family: var(--body-font);
     background:
         radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.68), transparent 46%),
         radial-gradient(circle at 82% 85%, rgba(255, 255, 255, 0.52), transparent 48%),
@@ -74,7 +75,7 @@ body.coming-soon-page::before {
 }
 
 .brand-logo {
-    width: clamp(140px, 20vw, 220px);
+    width: clamp(220px, 33vw, 520px);
     max-width: 100%;
     height: auto;
     display: block;
@@ -83,19 +84,21 @@ body.coming-soon-page::before {
 }
 
 .brand-subtitle {
-    font-size: clamp(26px, 3.2vw, 44px);
+    font-family: var(--coming-font);
+    font-size: clamp(36px, 4.4vw, 64px);
     letter-spacing: 0.15em;
-    margin-top: 10px;
-    margin-bottom: 32px;
+    margin-top: 12px;
+    margin-bottom: 36px;
     font-weight: 400;
 }
 
 .handwritten-note {
-    font-size: clamp(18px, 1.7vw, 24px);
+    font-family: var(--coming-font);
+    font-size: clamp(24px, 2.4vw, 36px);
     letter-spacing: 0.24em;
     text-transform: uppercase;
     line-height: 1.15;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: rgba(48, 49, 53, 0.84);
 }
 
@@ -111,15 +114,16 @@ body.coming-soon-page::before {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 120px;
-    height: 38px;
-    padding: 0 18px;
+    min-width: 140px;
+    height: 44px;
+    padding: 0 22px;
     border-radius: 999px;
     border: 1.5px solid rgba(46, 47, 52, 0.62);
     background: rgba(255, 255, 255, 0.45);
     color: #2e2f34;
     text-decoration: none;
-    font-size: 12px;
+    font-family: var(--coming-font);
+    font-size: 16px;
     letter-spacing: 0.14em;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
@@ -132,7 +136,8 @@ body.coming-soon-page::before {
 .contact-heading {
     margin-top: 34px;
     margin-bottom: 8px;
-    font-size: 13px;
+    font-family: var(--coming-font);
+    font-size: 18px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     opacity: 0.76;
@@ -147,7 +152,8 @@ body.coming-soon-page::before {
 }
 
 .notify-label {
-    font-size: clamp(14px, 1.2vw, 16px);
+    font-family: var(--coming-font);
+    font-size: clamp(18px, 1.7vw, 24px);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(45, 46, 51, 0.92);
@@ -166,10 +172,10 @@ body.coming-soon-page::before {
     flex: 1;
     border: none;
     background: transparent;
-    padding: 12px 14px;
-    font-size: clamp(16px, 1.5vw, 20px);
+    padding: 14px 16px;
+    font-size: clamp(18px, 1.8vw, 24px);
     color: #28292e;
-    font-family: var(--coming-font);
+    font-family: var(--body-font);
 }
 
 .notify-input-wrap input:focus {
@@ -180,8 +186,9 @@ body.coming-soon-page::before {
     border: none;
     background: transparent;
     color: #2e2f34;
-    font-size: clamp(20px, 1.8vw, 26px);
-    padding: 0 14px;
+    font-family: var(--coming-font);
+    font-size: clamp(28px, 2.2vw, 38px);
+    padding: 0 16px;
     cursor: pointer;
     line-height: 1;
 }
@@ -193,8 +200,8 @@ body.coming-soon-page::before {
 .notify-status {
     margin-top: 14px;
     min-height: 24px;
-    font-family: var(--coming-font);
-    font-size: 14px;
+    font-family: var(--body-font);
+    font-size: 16px;
     letter-spacing: 0.04em;
     color: #3a3b40;
 }
@@ -700,7 +707,7 @@ body.coming-soon-page::before {
     font-size: 16px;
     border: 2px solid var(--black);
     background-color: var(--white);
-    font-family: var(--coming-font);
+    font-family: var(--body-font);
     color: var(--black);
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -812,12 +819,17 @@ body.coming-soon-page::before {
         transform: translateY(-1vh);
     }
 
+    .brand-logo {
+        width: clamp(190px, 44vw, 320px);
+    }
+
     .brand-subtitle {
+        font-size: clamp(30px, 7vw, 52px);
         margin-bottom: 24px;
     }
 
     .handwritten-note {
-        font-size: clamp(15px, 4vw, 19px);
+        font-size: clamp(20px, 5.2vw, 28px);
         letter-spacing: 0.18em;
     }
 
@@ -827,14 +839,15 @@ body.coming-soon-page::before {
     }
 
     .pellet-btn {
-        min-width: 108px;
-        height: 34px;
-        padding: 0 14px;
-        font-size: 11px;
+        min-width: 124px;
+        height: 40px;
+        padding: 0 16px;
+        font-size: 14px;
     }
 
     .contact-heading {
         margin-top: 24px;
+        font-size: 16px;
     }
 
     .notify-form {
@@ -844,7 +857,7 @@ body.coming-soon-page::before {
     }
 
     .notify-label {
-        font-size: 12px;
+        font-size: 15px;
         letter-spacing: 0.16em;
     }
 
@@ -978,11 +991,11 @@ body.coming-soon-page::before {
     }
 
     .brand-logo {
-        width: clamp(110px, 36vw, 170px);
+        width: clamp(180px, 52vw, 260px);
     }
 
     .brand-subtitle {
-        font-size: clamp(20px, 7vw, 30px);
+        font-size: clamp(28px, 10vw, 42px);
         letter-spacing: 0.1em;
     }
 
@@ -991,7 +1004,7 @@ body.coming-soon-page::before {
     }
 
     .contact-heading {
-        font-size: 11px;
+        font-size: 14px;
     }
 
     .notify-input-wrap {
