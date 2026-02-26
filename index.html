@@ -1,51 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Fifth Verse</title>
-
-  <!-- Keep using your existing stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>The Fifth Verse - Coming Soon</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="holding">
+<body class="coming-soon-page">
+    <main class="coming-soon-shell" aria-labelledby="comingSoonTitle">
+        <h1 id="comingSoonTitle" class="brand-title">
+            THE FIFTH VERSE<span class="brand-mark">TM</span>
+        </h1>
+        <p class="brand-subtitle">PARIS</p>
+        <p class="handwritten-note">WE&apos;LL LET YOU KNOW</p>
+        <p class="handwritten-note">WHEN IT&apos;S READY</p>
 
-  <main class="holding-wrap">
-    <!-- 1) Logo (replace file later) -->
-    <img
-      class="holding-logo"
-      src="assets/logo.png"
-      alt="The Fifth Verse"
-    />
-
-    <!-- 2) Pills -->
-    <nav class="holding-nav" aria-label="Primary">
-      <a class="pill" href="about.html">About</a>
-      <a class="pill" href="services.html">Services</a>
-    </nav>
-
-    <!-- 3) Email capture -->
-    <section class="holding-capture" aria-label="Email signup">
-      <p class="holding-note">We’ll let you know when it’s ready.</p>
-
-      <!-- Option A (works instantly): mailto submission -->
-      <form
-        class="capture-form"
-        action="mailto:hello@thefifthverse.com"
-        method="post"
-        enctype="text/plain"
-      >
-        <label class="sr-only" for="email">Your email</label>
-        <input id="email" name="email" type="email" placeholder="Your email" required />
-        <button type="submit" aria-label="Submit email">→</button>
-      </form>
-
-      <!--
-        Option B (later, better): replace the form action with your email provider endpoint
-        e.g. Mailchimp / ConvertKit / Beehiiv / Buttondown, etc.
-      -->
-    </section>
-  </main>
-
+        <form id="notifyForm" class="notify-form" novalidate>
+            <label for="notifyEmail" class="notify-label">YOUR E-MAIL:</label>
+            <div class="notify-input-wrap">
+                <input
+                    id="notifyEmail"
+                    name="notifyEmail"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    aria-label="Your email address"
+                >
+                <button type="submit" aria-label="Notify me">-&gt;</button>
+            </div>
+        </form>
+        <p id="notifyStatus" class="notify-status" aria-live="polite"></p>
+    </main>
+    <script src="js/script.js"></script>
 </body>
 </html>

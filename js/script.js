@@ -29,15 +29,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Load country codes
-    loadCountryCodes();
+
+    const countryCodeSelect = document.getElementById('countryCode');
+    if (countryCodeSelect) {
+        loadCountryCodes();
+    }
+
+    setupNotifyForm();
 });
 
 let countriesData = [];
 
 // Public GitHub URL for country codes JSON
 const COUNTRY_JSON_URL = 'https://raw.githubusercontent.com/kkrishnakrr/public-assets/refs/heads/main/json/country-code.json';
+
+function setupNotifyForm() {
+    const notifyForm = document.getElementById('notifyForm');
+    const notifyEmail = document.getElementById('notifyEmail');
+    const notifyStatus = document.getElementById('notifyStatus');
+
+    if (!notifyForm || !notifyEmail || !notifyStatus) {
+        return;
+    }
+
+    notifyForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        if (!notifyEmail.checkValidity()) {
+            notifyStatus.textContent = 'Please enter a valid email address.';
+            notifyStatus.classList.add('error');
+            notifyEmail.focus();
+            return;
+        }
+
+        notifyStatus.textContent = "Thanks. We'll keep you posted.";
+        notifyStatus.classList.remove('error');
+        notifyForm.reset();
+    });
+}
 
 function loadCountryCodes() {
     fetch(COUNTRY_JSON_URL)
@@ -123,19 +152,44 @@ function createFallbackDropdown() {
 }
 
 function openContactPopup() {
-    document.getElementById('contactPopup').style.display = 'block';
-    document.getElementById('contactForm').style.display = 'block';
-    document.getElementById('successMessage').style.display = 'none';
+    const contactPopup = document.getElementById('contactPopup');
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    if (contactPopup) {
+        contactPopup.style.display = 'block';
+    }
+    if (contactForm) {
+        contactForm.style.display = 'block';
+    }
+    if (successMessage) {
+        successMessage.style.display = 'none';
+    }
 }
 
 function closeContactPopup() {
-    document.getElementById('contactPopup').style.display = 'none';
-    document.getElementById('contactForm').reset();
+    const contactPopup = document.getElementById('contactPopup');
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const popupForm = document.querySelector('#contactForm form');
+
+    if (contactPopup) {
+        contactPopup.style.display = 'none';
+    }
+    if (popupForm) {
+        popupForm.reset();
+    }
+    if (contactForm) {
+        contactForm.style.display = 'block';
+    }
+    if (successMessage) {
+        successMessage.style.display = 'none';
+    }
 }
 
 window.onclick = function(event) {
     const popup = document.getElementById('contactPopup');
-    if (event.target == popup) {
+    if (popup && event.target === popup) {
         popup.style.display = 'none';
     }
 }

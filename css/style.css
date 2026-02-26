@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Shadows+Into+Light&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +20,146 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Coming Soon Home */
+body.coming-soon-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #2f3035;
+    background:
+        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.68), transparent 46%),
+        radial-gradient(circle at 82% 85%, rgba(255, 255, 255, 0.52), transparent 48%),
+        #e9e9e9;
+}
+
+body.coming-soon-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.16;
+    background-image: linear-gradient(transparent 94%, rgba(0, 0, 0, 0.08) 94%);
+    background-size: 100% 4px;
+}
+
+.coming-soon-shell {
+    width: min(88vw, 760px);
+    text-align: center;
+    transform: translateY(-4vh);
+    animation: reveal-home 0.75s ease-out both;
+}
+
+.brand-title {
+    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: clamp(46px, 10vw, 110px);
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    line-height: 0.98;
+    color: #2e2f34;
+}
+
+.brand-mark {
+    font-size: clamp(12px, 1.6vw, 17px);
+    margin-left: 8px;
+    font-weight: 400;
+    vertical-align: 18%;
+}
+
+.brand-subtitle {
+    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: clamp(26px, 3.2vw, 44px);
+    letter-spacing: 0.15em;
+    margin-top: 16px;
+    margin-bottom: 42px;
+}
+
+.handwritten-note {
+    font-family: "Shadows Into Light", "Courier New", monospace;
+    font-size: clamp(28px, 3.2vw, 50px);
+    letter-spacing: 0.1em;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    color: rgba(48, 49, 53, 0.84);
+}
+
+.notify-form {
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.notify-label {
+    font-family: "Shadows Into Light", "Courier New", monospace;
+    font-size: clamp(24px, 2.6vw, 40px);
+    letter-spacing: 0.08em;
+    color: rgba(45, 46, 51, 0.92);
+}
+
+.notify-input-wrap {
+    min-width: clamp(220px, 34vw, 470px);
+    display: flex;
+    align-items: center;
+    border: 2px solid rgba(53, 54, 58, 0.68);
+    transform: rotate(-0.4deg);
+    background-color: rgba(255, 255, 255, 0.28);
+}
+
+.notify-input-wrap input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 14px;
+    font-size: clamp(16px, 1.5vw, 20px);
+    color: #28292e;
+    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.notify-input-wrap input:focus {
+    outline: none;
+}
+
+.notify-input-wrap button {
+    border: none;
+    background: transparent;
+    color: #2e2f34;
+    font-size: clamp(20px, 1.8vw, 26px);
+    padding: 0 14px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.notify-input-wrap button:hover {
+    opacity: 0.65;
+}
+
+.notify-status {
+    margin-top: 14px;
+    min-height: 24px;
+    font-family: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: #3a3b40;
+}
+
+.notify-status.error {
+    color: #892a2a;
+}
+
+@keyframes reveal-home {
+    from {
+        opacity: 0;
+        transform: translateY(-1vh) scale(0.99);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-4vh) scale(1);
+    }
 }
 
 .container {
@@ -608,6 +750,38 @@ body {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    body.coming-soon-page {
+        padding: 24px 0;
+        overflow-y: auto;
+    }
+
+    .coming-soon-shell {
+        width: min(92vw, 560px);
+        transform: translateY(-1vh);
+    }
+
+    .brand-subtitle {
+        margin-bottom: 30px;
+    }
+
+    .handwritten-note {
+        font-size: clamp(22px, 7vw, 40px);
+    }
+
+    .notify-form {
+        margin-top: 34px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .notify-label {
+        font-size: clamp(22px, 8vw, 36px);
+    }
+
+    .notify-input-wrap {
+        width: min(100%, 420px);
+    }
+
     .navbar .container {
         justify-content: center;
     }
@@ -729,6 +903,14 @@ body {
 }
 
 @media (max-width: 480px) {
+    .brand-subtitle {
+        letter-spacing: 0.1em;
+    }
+
+    .handwritten-note {
+        letter-spacing: 0.06em;
+    }
+
     .container {
         padding: 0 15px;
     }
