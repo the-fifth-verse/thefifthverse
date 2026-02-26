@@ -1,10 +1,8 @@
-/* Put your custom font files in /assets/fonts/ */
 @font-face {
-    font-family: "SiteCustom";
-    src: url("../assets/fonts/site-font.woff2") format("woff2"),
-        url("../assets/fonts/site-font.woff") format("woff");
+    font-family: "Shadows Into Light";
+    src: url("../assets/fonts/ShadowsIntoLight-Regular.ttf") format("truetype");
     font-style: normal;
-    font-weight: 100 900;
+    font-weight: 400;
     font-display: swap;
 }
 
@@ -19,11 +17,11 @@
     --black: #1A1A1A;
     --white: #FFFFFF;
     --light-beige: #F5F0E8;
-    --coming-font: "SiteCustom", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --coming-font: "Shadows Into Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--coming-font);
     background-color: var(--light-beige);
     color: var(--black);
     line-height: 1.6;
@@ -76,8 +74,9 @@ body.coming-soon-page::before {
 }
 
 .brand-logo {
-    width: clamp(180px, 26vw, 320px);
+    width: clamp(140px, 20vw, 220px);
     max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
     filter: contrast(1.05);
@@ -337,7 +336,7 @@ body.coming-soon-page::before {
     border: none;
     cursor: pointer;
     transition: all 0.3s;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--coming-font);
     letter-spacing: 1px;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
@@ -701,7 +700,7 @@ body.coming-soon-page::before {
     font-size: 16px;
     border: 2px solid var(--black);
     background-color: var(--white);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--coming-font);
     color: var(--black);
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -751,7 +750,7 @@ body.coming-soon-page::before {
     border: none;
     cursor: pointer;
     transition: all 0.3s;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--coming-font);
     letter-spacing: 1px;
     width: 100%;
     margin-top: 10px;
@@ -979,7 +978,7 @@ body.coming-soon-page::before {
     }
 
     .brand-logo {
-        width: clamp(140px, 42vw, 220px);
+        width: clamp(110px, 36vw, 170px);
     }
 
     .brand-subtitle {
